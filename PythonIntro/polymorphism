@@ -1,0 +1,21 @@
+class Vehicle:
+    def move(self):
+        pass  # Generic method to be overridden
+
+class Car(Vehicle):
+    def move(self):
+        print("Driving 🚗")
+
+class Plane(Vehicle):
+    def move(self):
+        print("Flying ✈️")
+
+class Bicycle(Vehicle):
+    def move(self):
+        print("Pedaling 🚲")
+
+# Polymorphism in action
+vehicles = [Car(), Plane(), Bicycle()]
+
+for v in vehicles:
+    v.move()

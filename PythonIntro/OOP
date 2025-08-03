@@ -1,0 +1,41 @@
+# Base class
+class Superhero:
+    def __init__(self, name, power, city):
+        self.name = name
+        self.power = power
+        self.city = city
+
+    def introduce(self):
+        print(f"I am {self.name}, and I protect {self.city} with my power: {self.power}!")
+
+    def fight(self):
+        print(f"{self.name} is fighting villains using {self.power}!")
+
+# Subclass with inheritance and polymorphism
+class FlyingHero(Superhero):
+    def __init__(self, name, power, city, flight_speed):
+        super().__init__(name, power, city)
+        self.flight_speed = flight_speed
+
+    def fight(self):
+        print(f"{self.name} flies at {self.flight_speed} km/h and attacks from the sky with {self.power}!")
+
+# Another subclass to show encapsulation
+class TechHero(Superhero):
+    def __init__(self, name, power, city, gadgets):
+        super().__init__(name, power, city)
+        self.__gadgets = gadgets  # private attribute
+
+    def show_gadgets(self):
+        print(f"{self.name}'s gadgets: {', '.join(self.__gadgets)}")
+
+# Example usage
+hero1 = FlyingHero("SkyFlash", "Wind Blast", "Metropolis", 800)
+hero2 = TechHero("Gadgeteer", "Laser Beams", "Neo City", ["Grappling Hook", "EMP Drone"])
+
+hero1.introduce()
+hero1.fight()
+print()
+hero2.introduce()
+hero2.fight()
+hero2.show_gadgets()
